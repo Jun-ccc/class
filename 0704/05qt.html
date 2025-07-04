@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p id="result">結果</p>                                <!-- 老師寫法 -->
+
+    <script>
+        var pass = 0;                                      // 及格
+        var fail = 0;                                      // 不及格
+        var tot = 0;                                       // 總分
+        var avg = 0.0;                                     // 總平均
+
+        while (1) {
+            var score = prompt("請輸入分數");
+            if (score == null) {                           // 檢查是否取消
+                alert("您按了取消，即將結束輸入!");
+                break;
+            }
+            if (score.trim() == "") {                      // 檢查是否空白 / 去除資料前後空白=>trim()
+                alert("不能空白，請重新輸入!");
+                continue;
+            }
+            if (score == -1) {
+                alert("成績輸入結束!");
+                break;
+            }
+            score = Number(score)
+            if (isNaN(score)) {
+                alert("非數字!請重新輸入!");
+                continue;
+            } else if (score < 0 || score > 100) {
+                alert("不是有效範圍!請重新輸入0-100之間");
+                continue;
+            }
+            if (score >= 60) {
+                pass++;
+            } else {
+                fail++;
+            }
+            tot = tot + score;                              // 總分
+        }
+
+        if (pass + fail > 0) {                              // 總平均
+            avg = tot / (pass + fail);
+        }
+
+        var result = document.getElementById("result");     // 顯示結果
+        result.innerHTML = `
+            及格：${pass}人<br>
+            不及格：${fail}人<br>
+            總分：${tot}人<br>
+            總平均：${avg.toFixed(2)}分
+        `;
+
+    </script>
+
+</body>
+
+</html>
