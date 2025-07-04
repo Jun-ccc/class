@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var rd = Math.random() * 100;
+        rd=(Math.floor(rd));
+
+        do {
+            var num = prompt("請輸入數字");
+
+            if (num < rd) {
+                alert(`太小了(提示：${num}-100)`);
+                continue;
+            } else if (num > rd) {
+                alert(`太大了(提示：${num})`);
+                continue;
+            }
+
+        } while (1);
+
+
+    </script>
+</body>
+
+</html>
