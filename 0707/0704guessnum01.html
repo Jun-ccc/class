@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+</head>
+// 0704 test 檢討 //
+
+<body>
+    <h2>猜數字</h2>
+    <script>
+        let rd = Math.floor(Math.random() * 100) + 1;
+        let min = 1;
+        let max = 100;
+        let count = 0;
+        let strMsg = "";             // 存放每次執行後的訊息
+
+        while (1) {
+            count++;
+            let keyNum = prompt(`請輸入任意數：${min}-${max}`);
+
+            if (keyNum == null) {
+                alert("您放棄猜數字,即將結束!");
+                break;
+            }
+            if (keyNum.trim() == "") {
+                alert("不能空白,請重新輸入!");
+                continue;
+            }
+
+            keyNum = parseInt(keyNum);              // pareInt(a) => 數值轉換會刪掉小數 & Number(a) => 包含小數
+
+            if (isNaN(keyNum)) {
+                alert("非數字,請重新輸入!");
+                continue;
+            }
+
+            if (keyNum <= 0 || keyNum > 100) {
+                alert("超出範圍,請重新輸入!");
+                continue;
+            }
+
+            if (keyNum === rd) {
+                alert(`第${count}次,Bingo!恭喜您猜對了!`);
+                strMsg = strMsg + `第${count}次,Bingo!恭喜您猜對了!`;
+                break;
+            }
+            if (keyNum > rd) {
+                max = keyNum;
+                alert(`太大了!提示(${min}-${max})`);
+                strMsg = strMsg + `第${count}次,太大了!提示(${min}-${max})<br>`;
+            } else {
+                alert(`太小了!提示(${max}-${min})`);
+                strMsg = strMsg + `第${count}次,太小了!提示(${min}-${max})<br>`;
+            }
+        }
+        document.write(strMsg);
+
+    </script>
+</body>
+
+</html>

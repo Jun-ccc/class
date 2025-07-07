@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h2>陣列</h2>
+    <hr>
+
+    <script>
+        let arr1 = [100, 2000, 30];                  // 建立一個陣列，在放任意n個值
+        console.log("排序前：" + arr1);
+        arr1.sort();                                    // 排序
+
+        console.log("排序前：" + arr1);
+        arr1.sort((a, b)=> {                            // 遞增排序
+            return a - b;                               // 使用箭頭函式寫法
+        });
+
+        console.log("遞增排序後："+arr1);                 // 遞減排序
+        arr1.sort((a,b) => {
+            return b-a;
+        });
+        
+        for (let i = 0; i < arr1.length; i++) {         // 使用迴圈，顯示陣列中的內容
+            console.log(arr1[i]);
+        }
+    </script>
+</body>
+
+</html>
