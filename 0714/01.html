@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>函式</h1>
+    請輸入姓名：<input type="text" id="name">
+    <button onclick="sayHi3()">確定</button>
+    <p id="show"></p>
+    <script>
+        // 建立函式 //
+        // 有參數，沒有傳回值
+        // function sum(a, b) {
+        //     console.log(a + b);
+        // }
+
+        // 有參數，有傳回值
+        function sum(a, b) {
+            let c = a + b;
+            return c;
+        }
+
+        // 呼叫函式
+        console.log(sum(5, 3));
+
+        let n1 = 50;
+        let n2 = 30;
+        let tot = sum(n1, n2);
+        document.write(`${n1}+${n2}=${tot}`);
+
+        // 無參數，無傳回值
+        function sayHi() {
+            alert("Hi");
+        }
+        // sayHi();
+
+        // 有參數，無傳回值
+        // function sayHi2(name) {
+        //     alert("Hi," + name);
+        // }
+        // let userName = prompt("請輸入姓名");
+        // sayHi2(userName);
+
+        // 有參數，無傳回值for
+        function sayHi3() {
+            let name = document.getElementById("name");     // 取得文字方塊位置
+            let show = document.getElementById("show");     // 取得顯示資料位置
+            // 純文字
+            // show.textContent = "Hi," + name.value;
+            // 含有HTML標籤
+            // show.innerHTML = "Hi,<bro>" + name.value;
+            // 使用跳脫字元
+            show.innerText = "Hi,\n" + name.value;
+        }
+
+
+        // 先前學的基本作法 //
+        // let a=5;
+        // let b=3;
+        // console.log(a+b);
+
+        // let c=50;
+        // let d=30;
+        // console.log(c+d);
+
+    </script>
+</body>
+
+</html>
