@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 建立一個add()函式，計算所有參數的總合 //
+
+        // 其餘參數，來接收不同參數的個數使用
+        // let add = (n1, n2, n3, n4) 改寫成 let add = (...number)
+        let add = (...number) => {
+            let tot = 0;
+            for (let n of number) {
+                tot += n;
+            }
+            return tot;
+        }
+        console.log(add(5, 3));
+        console.log(add(5, 3, 8));
+        console.log(add(5, 3, 8, 10));
+
+        // 其餘陣列參數 (較少使用到) 值給陣列必須要使用其餘參數
+        let add2 = (...[x, y, z = 0]) => {
+            console.log(x);
+            console.log(y);
+            console.log(z);
+            return x + y + z;
+        }
+        console.log(add2(5, 3));
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 二數相加 //
+        function add(n1, n2) {
+            return n1 + n2;
+        }
+        console.log(add(5, 3));
+
+        // 匿名函式 //
+        let add2 = function (n1, n2) {
+            return n1 + n2;
+        }
+        console.log(add2(10, 8));
+
+        // 請傳送半徑，算出圓面積(pi*r*r)，pi=3.14 //
+        let round = function (n1, n2) {
+            return 3.14 * n1 * n2;
+        }
+        console.log(round(10, 10));  // Me
+
+        let getArea = function (r) {
+            const pi = 3.14;              // 建立一個常數(const)的值 (執行中的值不能變更，一旦更改就會出錯)
+            return pi * r * r;
+        }
+        console.log(getArea(10));  // Teacher
+
+        // 將上個練習改以"箭頭函式"(arrow function)宣告 //
+        let getArea2 = (r) => {
+            const pi = 3.14;
+            return pi * r * r;
+        }
+        console.log(getArea2(10));
+
+    </script>
+</body>
+
+</html>
