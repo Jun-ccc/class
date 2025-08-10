@@ -28,15 +28,30 @@
     </form>
     <p id="result"></p>
     <script>
+        let result = document.querySelect("#result)
         let btn = document.querySelector('#btn');
         btn.addEventListener('click', function () {
+            let arr=[];
             let subject = document.getElementsByName('subject');
             for (let i = 0; i < subject.length; i++) {
                 if (subject[i].checked) {
-                    result.innerHTML += subject[i].value + "<br>";
+                    arr.push(subject[i].value);
                 }
             }
-        });
+            let str = "";
+            str+="<ul id='result'>";
+            arr.forEach(op=>{
+                if (op===css){
+                    str+="<li class='chgColor'>";
+                }else{
+                    str+="<li>";
+                }
+                str+=op;
+                str+="</li>";
+            });
+            str+="</ul>";
+            result.innerHTML = str;
+        })
 
 
     </script>
